@@ -1,0 +1,75 @@
+/**************************************************************************************************************/
+/*Este es el archivo para los estilos del proyecto final
+Aquí se entregan los puntos 2 y 3 de los entregables. 
+Debes completar cada una de las secciones indicadas a continuación siguiendo las instrucciones dadas.
+*/
+/**************************************************************************************************************/
+
+/* 1) FUENTES
+- Elige 2 fuentes: una para PÁRRAFOS y otra para TÍTULOS.
+- Recomendación: simple/legible para párrafos; más llamativa para títulos.
+- Si usas Google Fonts, enlázala las fuentes en el <head> de tu HTML en la sección indicada y
+usa aquí exactamente los mismos nombres de familia.
+*/
+:root {
+    /*Aquí va la fuente principal para los PÁRRAFOS y demás textos.  
+    En vez de "Inter", debe colocar el nombre de la fuente elegida*/
+    --font-body: "Poppins", sans-serif;
+    
+    /* Aquí va la fuente de TÍTULOS. 
+    En vez de "Roboto", debe colocar el nombre de la fuente elegida */
+    --font-heading: "league spartan", sans-serif;
+}
+
+/**************************************************************************************************************/
+
+/* 2) PALETA DE COLORES
+- Define tu primario, secundario y fondo.
+- Puedes usar HEX (#RRGGBB) o RGB (rgb(r,g,b)).
+- Añadimos también color de texto para buen contraste.
+*/
+:root {
+    --color-primary: #0C2C47; /* ← PRIMARIO */
+    --color-secondary:#2D5652; /* ← SECUNDARIO  */
+    --color-terciary: #f5d8e7;
+    --color-bg: #eeeae7; /* ← FONDO */
+    --color-text: var(--color-primary); /* ← TEXTO (ajusta si tu fondo es oscuro) */
+    --color-bg-2: var(--color-secondary); /* ← OPCIONAL: Puedes elegir un segundo color de fondo para usar en otras secciones. */
+    --color-text-2: var(--color-terciary); /* ← OPCIONAL: Puedes elegir un segundo color de texto para usar con el segundo color de fondo. */
+    --color-bg-3: var(--color-primary);
+    --color-text-3: var(--color-bg);
+    --color-bg-4: var(--color-terciary);
+    --color-text-4: var(--color-secondary);
+    --color-bg-5: var(--color-primary);
+    --color-text-5: var(--color-bg);
+}
+
+/**************************************************************************************************************/
+
+/* 3) RESETEO BÁSICO Y TIPOGRAFÍA GLOBAL */
+/*Los siguientes estilos se dejan tal y como están.*/
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+/* Agrega estilos al body*/
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* Títulos usan la fuente de encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin: 0 0 0.5em;
+}
+
+/**************************************************************************************************************/
+/* 4) ESTILOS ADICIONALES
+- Aquí puedes agregar estilos adicionales que consideres necesarios para tu proyecto.
+- Por ejemplo, estilos para botones, enlaces, formularios, etc.
+*/
