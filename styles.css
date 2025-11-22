@@ -1,75 +1,337 @@
-/**************************************************************************************************************/
-/*Este es el archivo para los estilos del proyecto final
-Aquí se entregan los puntos 2 y 3 de los entregables. 
-Debes completar cada una de las secciones indicadas a continuación siguiendo las instrucciones dadas.
-*/
-/**************************************************************************************************************/
-
-/* 1) FUENTES
-- Elige 2 fuentes: una para PÁRRAFOS y otra para TÍTULOS.
-- Recomendación: simple/legible para párrafos; más llamativa para títulos.
-- Si usas Google Fonts, enlázala las fuentes en el <head> de tu HTML en la sección indicada y
-usa aquí exactamente los mismos nombres de familia.
-*/
+/********************************************
+** UENTES
+*********************************************/
 :root {
-    /*Aquí va la fuente principal para los PÁRRAFOS y demás textos.  
-    En vez de "Inter", debe colocar el nombre de la fuente elegida*/
     --font-body: "Poppins", sans-serif;
-    
-    /* Aquí va la fuente de TÍTULOS. 
-    En vez de "Roboto", debe colocar el nombre de la fuente elegida */
     --font-heading: "league spartan", sans-serif;
 }
 
-/**************************************************************************************************************/
-
-/* 2) PALETA DE COLORES
-- Define tu primario, secundario y fondo.
-- Puedes usar HEX (#RRGGBB) o RGB (rgb(r,g,b)).
-- Añadimos también color de texto para buen contraste.
-*/
+/********************************************
+** PALETA DE COLORES
+*********************************************/
 :root {
-    --color-primary: #0C2C47; /* ← PRIMARIO */
-    --color-secondary:#2D5652; /* ← SECUNDARIO  */
+    --color-primary: #0C2C47;
+    --color-secondary:#2D5652;
     --color-terciary: #f5d8e7;
-    --color-bg: #eeeae7; /* ← FONDO */
-    --color-text: var(--color-primary); /* ← TEXTO (ajusta si tu fondo es oscuro) */
-    --color-bg-2: var(--color-secondary); /* ← OPCIONAL: Puedes elegir un segundo color de fondo para usar en otras secciones. */
-    --color-text-2: var(--color-terciary); /* ← OPCIONAL: Puedes elegir un segundo color de texto para usar con el segundo color de fondo. */
-    --color-bg-3: var(--color-primary);
-    --color-text-3: var(--color-bg);
-    --color-bg-4: var(--color-terciary);
-    --color-text-4: var(--color-secondary);
-    --color-bg-5: var(--color-primary);
-    --color-text-5: var(--color-bg);
+    --color-quaternary: #eeeae7;
 }
 
-/**************************************************************************************************************/
-
-/* 3) RESETEO BÁSICO Y TIPOGRAFÍA GLOBAL */
-/*Los siguientes estilos se dejan tal y como están.*/
-
+/********************************************
+** RESETEO + TIPOGRAFÍA GLOBAL
+*********************************************/
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-/* Agrega estilos al body*/
 
 body {
     margin: 0;
-    background: var(--color-bg);
-    color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
 }
 
-/* Títulos usan la fuente de encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     line-height: 1.2;
-    margin: 0 0 0.5em;
+    margin-top: 0;
+    text-transform: uppercase;
+    padding-top: 40px;
 }
 
-/**************************************************************************************************************/
-/* 4) ESTILOS ADICIONALES
-- Aquí puedes agregar estilos adicionales que consideres necesarios para tu proyecto.
-- Por ejemplo, estilos para botones, enlaces, formularios, etc.
-*/
+/********************************************
+** 1) SECCIÓN: PERFIL / HEADER
+*********************************************/
+.headerperfil {
+    height: 40vh;
+    padding: 60px 10%;
+    display: flex;
+    gap: 10vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-quaternary);
+}
+
+/* Imagen del perfil */
+.imagen-perfil {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px 70px 40px;
+}
+
+/* Título del nombre */
+.nombre {
+    font-size: 5rem;
+    color: var(--color-primary);
+}
+
+/******** MEDIA QUERIES — PERFIL ********/
+@media (max-width: 1024px) {
+    .imagen-perfil {
+        max-width: 220px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .headerperfil {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .imagen-perfil {
+        width: 60vw;
+        max-width: 200px;
+        min-width: 150px;
+    }
+}
+
+/********************************************
+** 2) SECCIÓN: SOBRE MÍ
+*********************************************/
+.contenedorsobremi {
+    min-height: 100vh;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-secondary);
+    color: var(--color-terciary);
+}
+
+/* Texto */
+.contenidosobremi {
+    max-width: 450px;
+    margin-right: 20px;
+    user-select: text;
+}
+
+.titulosobremi {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.parrafosobremi {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+/* Imagen celulares */
+.imagen-celulares {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/******** MEDIA QUERIES — SOBRE MÍ ********/
+@media (max-width: 1024px) {
+    .imagen-celulares {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedorsobremi {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .imagen-celulares {
+        width: 70vw;
+        max-width: 320px;
+        min-width: 200px;
+    }
+}
+
+/********************************************
+** ESPACIADO LATERAL SOLO EN DESKTOP
+*********************************************/
+@media (min-width: 900px) {
+
+    .headerperfil,
+    .contenedorsobremi,
+    .footercontacto {
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+}
+
+/********************************************
+** 3) SECCIÓN: HABILIDADES
+*********************************************/
+.contenedorhabilidades {
+    position: relative;
+    min-height: 100vh;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    color: var(--color-quaternary);
+    background-image: url(assets/fondoflores.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CUADRADO AZUL ENTRE EL FONDO Y EL TEXTO */
+.contenedorhabilidades::before {
+    content: "";
+    position: absolute;
+    width: 600px;       
+    height: 380px;     
+    background-color: var(--color-primary); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;  
+    border-radius: 40px;
+}
+
+/* TEXTO ENCIMA DEL CUADRADO */
+.contenedorhabilidades * {
+    position: relative;
+    z-index: 2;         
+}
+
+.bloquehabilidades {
+    max-width: 500px;      
+    text-align: left;       
+}
+
+.titulohabilidades {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.listahabilidades {
+    font-size: 1.2rem;
+}
+
+/********************************************
+** 4) SECCIÓN: EDUCACION
+*********************************************/
+.contenedoreducacion {
+    position: relative;
+    min-height: 100vh;
+    padding: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+
+    color: var(--color-secondary);
+    background-color: #f5d8e7;
+    background-size: cover;
+    background-position: center;
+}
+
+.bloqueeducacion {
+    width: 80%;
+    max-width: 1500px;          
+    text-align: right;      
+}
+
+.tituloeducacion {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.listaeducacion {
+    font-size: 1.2rem;
+    text-align: right;
+    margin: 0;
+    list-style: none;   
+}
+
+/********************************************
+** 5) FOOTER CONTACTO
+*********************************************/
+.footercontacto {
+    height: 40vh;
+    padding: 60px 10%;
+    padding-bottom: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;  
+    align-items: start;
+
+    color: var(--color-quaternary);
+    background-color: var(--color-primary);
+}
+
+.bloqueefooter {
+    width: 80%;
+    max-width: 1500px;          
+    text-align: left;       
+}
+
+.titulocontacto {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.listacontacto {
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 0;  
+    padding-left: 25px;
+}
+
+.footercontacto a:link {
+    color: var(--color-quaternary);
+    font-weight: 500;
+}
+
+.footercontacto a:visited {
+    color: #f5d8e7;
+}
+
+.footercontacto a:hover {
+    color: #f5d8e7;
+}
+
+.footercontacto a:active {
+    color: #f5d8e7;
+}
+
+/************* SELECCION DE TEXTO ******************/
+
+/* Selección en la sección de perfil */
+.headerperfil ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-quaternary);
+}
+
+/* Selección en la sección sobre mí */
+.contenedorsobremi ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-terciary);
+}
+
+/* Selección en la sección habilidades */
+.contenedorhabilidades ::selection {
+    background-color: var(--color-quaternary);
+    color: var(--color-primary);
+}
+
+.contenedoreducacion ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-terciary);
+}
+
+/* Selección en el footer */
+.footercontacto ::selection {
+    background-color: var(--color-quaternary);
+    color: var(--color-primary);
+}
